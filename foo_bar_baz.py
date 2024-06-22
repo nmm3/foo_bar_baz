@@ -1,16 +1,15 @@
-def screening(a):
-    if a % 3 == 0:
-        print(" foo", end='')
-    if a % 5 == 0:
-        print(" bar", end='')
-    if a % 7 == 0:
-        print(" baz", end='')
+def screening(number: int) -> str:
+    result_string = str(number) + "."
+    if number % 3 == 0:
+        result_string = result_string + " foo"
+    if number % 5 == 0:
+        result_string = result_string + " bar"
+    if number % 7 == 0:
+        result_string = result_string + " baz"
+    return result_string
 
 if __name__ == '__main__':
     i = 0
-    while i < 50:
-        i = i + 1
-        print(i,".", sep = '', end = '')
-        screening(i)
-        print("")
+    for i in range(1, 51):
+        print(screening(i))
     print("конец")
